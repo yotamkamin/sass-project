@@ -1,0 +1,143 @@
+.card {
+  //FUNCTIONALITY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+
+  &__side {
+    height: 50rem;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-neon-purple,
+          $color-neon-light-purple
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-neon-blue,
+          $color-neon-light-blue
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-neon-orang,
+          $color-neon-light-orang
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  //FRONT SIDE STYLING
+  &__pic {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 0 83%, 100% 100%, 100% 0);
+    clip-path: polygon(0 0, 0 83%, 100% 100%, 100% 0);
+
+    &--1 {
+      background-image: url(../../img/Untitled-1.png);
+    }
+    &--2 {
+      background-image: url(../../img/pexels-game2.jpg);
+    }
+    &--3 {
+      background-image: url(../../img/pexels-game3.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-black;
+    text-align: center;
+    width: 15rem;
+    position: absolute;
+    top: 19rem;
+    left: 3rem;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-neon-purple,
+        $color-neon-light-purple
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-neon-blue,
+        $color-neon-light-blue
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-neon-orang,
+        $color-neon-light-orang
+      );
+    }
+  }
+
+  &__info {
+    text-align: left;
+    padding: 3rem 2rem;
+  }
+  //BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__go-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__go-only {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  &__go-prog {
+    font-size: 3rem;
+    font-weight: 100;
+  }
+}

@@ -1,0 +1,143 @@
+body {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+
+  &--main {
+    display: flex;
+    font-size: 10rem;
+    letter-spacing: 17.5px;
+    font-weight: 900;
+
+    .y {
+      opacity: 0;
+      animation: drop 0.4s linear forwards;
+      color: $color-neon-pink;
+    }
+
+    .o {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.2s;
+      color: $color-neon-orang;
+    }
+
+    .t {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.4s;
+      color: $color-neon-green;
+    }
+
+    .a {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.6s;
+      color: $color-neon-blue;
+    }
+
+    .m {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.8s;
+      color: $color-neon-yellow;
+    }
+    .k {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.1s;
+      color: $color-neon-purple;
+    }
+    .a2 {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.2s;
+      color: $color-neon-red;
+    }
+    .m2 {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.4s;
+      color: $color-neon-light-blue;
+    }
+    .i {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.6s;
+      color: $color-neon-light-orang;
+    }
+    .n {
+      opacity: 0;
+      animation: drop 0.4s linear forwards 0.8s;
+      color: $color-neon-light-green;
+    }
+    .z {
+      visibility: hidden;
+    }
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 3.1rem;
+    font-weight: 900;
+    letter-spacing: 1.3rem;
+
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.heading-secondery {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  background-clip: none;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 0.2rem 1rem 3rem $color-black;
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
